@@ -825,7 +825,10 @@ footer {
 ========================================================= */
 .proj-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-areas:
+        "wild wild audio"
+        "smart menu audio";
     gap: 1.5rem;
     align-items: start;
 }
@@ -833,11 +836,28 @@ footer {
 .proj-card-wrap {
     perspective: 1000px;
     height: auto;
+    min-width: 0;
 }
 
 .proj-card-wrap.wide {
-    grid-column: span 2;
+    grid-column: auto;
     height: auto;
+}
+
+.proj-card-wrap:nth-child(1) {
+    grid-area: wild;
+}
+
+.proj-card-wrap:nth-child(2) {
+    grid-area: audio;
+}
+
+.proj-card-wrap:nth-child(3) {
+    grid-area: smart;
+}
+
+.proj-card-wrap:nth-child(4) {
+    grid-area: menu;
 }
 
 .proj-card {
