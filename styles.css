@@ -825,7 +825,7 @@ footer {
 ========================================================= */
 .proj-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
     gap: 1.5rem;
     align-items: start;
 }
@@ -1110,35 +1110,35 @@ footer {
 
 .proj-type {
     font-family: var(--mono);
-    font-size: 0.64rem;
+    font-size: 0.74rem;
     color: var(--a2);
     letter-spacing: 0.1em;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.4rem;
 }
 
 .proj-name {
-    font-size: 1.05rem;
+    font-size: 1.2rem;
     font-weight: 700;
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.45rem;
 }
 
 .proj-desc-short {
-    font-size: 0.82rem;
+    font-size: 0.94rem;
     color: var(--muted);
-    line-height: 1.55;
+    line-height: 1.65;
 }
 
 .proj-back-title {
-    font-size: 1.1rem;
+    font-size: 1.28rem;
     font-weight: 700;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.65rem;
 }
 
 .proj-back-desc {
-    font-size: 0.85rem;
+    font-size: 0.96rem;
     color: #9090c0;
-    line-height: 1.7;
-    margin-bottom: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1.1rem;
 }
 
 .proj-stack {
@@ -1150,8 +1150,8 @@ footer {
 
 .tag {
     font-family: var(--mono);
-    font-size: 0.62rem;
-    padding: 2px 9px;
+    font-size: 0.68rem;
+    padding: 4px 10px;
     border-radius: 100px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--border);
@@ -1172,7 +1172,7 @@ footer {
 
 .proj-link {
     font-family: var(--mono);
-    font-size: 0.72rem;
+    font-size: 0.8rem;
     color: var(--muted);
     text-decoration: none;
     display: inline-flex;
@@ -1191,9 +1191,9 @@ footer {
 
 .proj-hint {
     font-family: var(--mono);
-    font-size: 0.6rem;
+    font-size: 0.68rem;
     color: rgba(255, 255, 255, 0.2);
-    margin-top: 0.75rem;
+    margin-top: 0.85rem;
 }
 
 /* =========================================================
@@ -1601,10 +1601,13 @@ footer {
     }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 950px) {
+    .proj-grid {
+        grid-template-columns: 1fr;
+    }
+
     .proj-card-wrap.wide {
         grid-column: span 1;
-        height: auto;
     }
 
     .hero-stats {
@@ -1614,6 +1617,35 @@ footer {
 
     .contact-email-big {
         word-break: break-word;
+    }
+}
+
+@media (max-width: 700px) {
+    .proj-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .proj-card-wrap,
+    .proj-card-wrap.wide {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .proj-preview {
+        height: 170px;
+    }
+
+    .proj-body {
+        padding: 1.2rem 1.1rem 1.35rem;
+    }
+
+    .proj-back {
+        padding: 1.35rem;
+    }
+
+    .proj-back-desc {
+        font-size: 0.92rem;
+        line-height: 1.75;
     }
 }
 
